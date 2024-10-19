@@ -3,4 +3,4 @@ env/*
 FastAPI/__pycache__/*
 FastAPI/Controllers/__pycache__/*
 FastAPI/Entities/__pycache__/*
-FastAPI/Repositories/__pycache__/*
+FastAPI/DTO/__pycache__/*

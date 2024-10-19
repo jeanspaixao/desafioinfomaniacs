@@ -2,7 +2,7 @@ from typing import Annotated
 from sqlalchemy import select
 from fastapi import APIRouter,HTTPException,status,Query,Depends
 from Entities.models import User,Topic,Message
-from Repositories.modelbase import TopicBase, UserBase
+from DTO.modelbase import TopicBase, UserBase
 from database import SessionLocal
 from sqlalchemy.orm import Session
 
@@ -107,4 +107,4 @@ async def update_user(id:int,updatedUser: UserBase,db: db_dependency):
     db_user.username = updatedUser.username  
     db.flush()
     db.commit()
-    return "Usuário atualizado   com sucesso!"       
+    return "Usuário atualizado com sucesso!"       
