@@ -12,6 +12,8 @@ class TopicBase(BaseModel):
     user_id: int
     status_topic: str
     category: str
+    date_insert: str
+    date_update: str
 
 class UserBase(BaseModel):
     username: str

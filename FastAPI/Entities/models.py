@@ -16,6 +16,8 @@ class Topic(Base):
     user_id = Column(Integer)
     status_topic = Column(String(20))
     category = Column(String(50))
+    date_insert = Column(String(50))
+    date_update = Column(String(50))
 
 class Message(Base):
     __tablename__ = 'messages'
@@ -25,3 +27,5 @@ class Message(Base):
     message_position = Column(Integer)
     user_id = Column(Integer)
     message = Column(String(1000))
+    date_insert = Column(String(50))
+    date_update = Column(String(50))
