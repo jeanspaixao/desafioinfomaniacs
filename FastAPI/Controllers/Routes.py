@@ -5,7 +5,7 @@ from Entities.models import User,Topic,Message
 from DTO.modelbase import TopicBase, UserBase
 from database import SessionLocal
 from sqlalchemy.orm import Session
-
+import datetime
 
 def get_db():
     db = SessionLocal()
@@ -94,6 +94,7 @@ async def update_topic(id:int, updatedTopic: TopicBase,db: db_dependency):
     db_topic.status_topic = updatedTopic.status_topic
     db_topic.title = updatedTopic.title
     db_topic.user_id = updatedTopic.user_id
+    db_topic.date_update = datetime.datetime.now().strftime("%d/%m/%Y %HH:%MM")
     
     db.flush()
     db.commit()
