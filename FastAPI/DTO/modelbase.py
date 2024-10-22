@@ -15,5 +15,10 @@ class TopicBase(BaseModel):
     date_insert: str
     date_update: str
 
+class TopicModel(TopicBase):
+    id: int
+    class Config:
+        orm_mode = True
+        
 class UserBase(BaseModel):
     username: str

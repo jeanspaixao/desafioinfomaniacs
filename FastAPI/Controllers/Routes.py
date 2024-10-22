@@ -1,8 +1,8 @@
-from typing import Annotated
+from typing import Annotated, List
 from sqlalchemy import select
 from fastapi import APIRouter,HTTPException,status,Query,Depends
 from Entities.models import User,Topic,Message
-from DTO.modelbase import TopicBase, UserBase
+from DTO.modelbase import TopicBase, TopicModel, UserBase
 from database import SessionLocal
 from sqlalchemy.orm import Session
 
@@ -29,6 +29,7 @@ async def create_topic(topic: TopicBase,db: db_dependency):
         db_topic = Topic(**topic.model_dump())
         db.add(db_topic)
         db.commit()
+        db.refresh(db_topic)
         return "Postagem adicionada com sucesso!"
     except Exception as e:
         print(e)
@@ -46,10 +47,10 @@ async def create_user(user: UserBase,db: db_dependency):
         raise HTTPException(status_code=404, detail=e)
     
 
-@router.get("/topics/{page}")
+@router.get("/topics/{page}", response_model=List[TopicModel])
 async def getTopics(page:int, db:db_dependency,
     limit: Annotated[int, Query(le=100)] = 100): 
-    topics = db.execute(select(Topic).offset((page-1)*limit).limit(limit)).mappings().all()
+    topics = db.query(Topic).offset((page-1)*limit).limit(limit).all()
     if topics is None:
         raise HTTPException(status_code=404, detail='Não existem postagens nessa página.')
     return topics    
