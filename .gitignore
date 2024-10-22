@@ -4,3 +4,26 @@ FastAPI/__pycache__/*
 FastAPI/Controllers/__pycache__/*
 FastAPI/Entities/__pycache__/*
 FastAPI/DTO/__pycache__/*
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/React/forum/node_modules
+/React/forum/.pnp
+/React/forum/.pnp.js
+
+# testing
+/React/forum/coverage
+
+# production
+/React/forum/build
+
+# misc
+/React/forum/.DS_Store
+/React/forum/.env.local
+/React/forum/.env.development.local
+/React/forum/.env.test.local
+/React/forum/.env.production.local
+/React/forum/npm-debug.log*
+/React/forum/yarn-debug.log*
+/React/forum/yarn-error.log*
