@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import api from "../Api";
+import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Home() {
+export default function Menu() {
 
 
   
@@ -10,6 +9,7 @@ export default function Home() {
 
             <div className="flex flex-row">
                 <ul className="container-list">
+                    <li><Link to="/">Página inicial</Link></li>
                     <li><Link to="/addUser">Adicionar usuário</Link></li>
                     <li><Link to="/getTopics">Ver postagens</Link></li>
                     <li><Link to="/addTopic">Nova postagem</Link></li>

@@ -6,7 +6,7 @@ import Menu from './Menu.tsx';
 import api from '../Api.js';
 
 
-export default function TopicList(){
+export default function AddTopic(){
 
     const handleFormSubmitAddTopic = async (event) => {
         event.preventDefault();

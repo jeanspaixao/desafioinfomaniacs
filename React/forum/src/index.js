@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import AddUser from './pages/AddUser.tsx';
@@ -9,6 +8,7 @@ import Home from './pages/Home.tsx';
 import NotFound from './pages/NotFound.tsx';
 import GetTopics from './pages/GetTopics.tsx';
 import AddTopic from './pages/AddTopic.tsx';
+import GetMessages from './pages/GetMessages.tsx';
 
 
 const router = createBrowserRouter([
@@ -28,6 +28,10 @@ const router = createBrowserRouter([
   {
     path:'/getTopics', 
     element: <GetTopics />
+  },
+  {
+    path:'/getTopics/:id/getMessages', 
+    element: <GetMessages />
   },
 ]);
 

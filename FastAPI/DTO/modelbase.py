@@ -22,3 +22,16 @@ class TopicModel(TopicBase):
         
 class UserBase(BaseModel):
     username: str
+
+class MessageBase(BaseModel):
+    topic_id: int
+    message_position: int
+    message: str
+    user_id: int
+    date_insert: str
+    date_update: str
+
+class MessageModel(MessageBase):
+    id: int
+    class Config:
+        orm_mode = True
