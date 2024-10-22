@@ -10,6 +10,7 @@ export default function Home() {
     return (
           <div className="home">
             <Menu />
+            Seja bem-vindo ao nosso fórum! Aqui você pode encontrar a resposta para as suas dúvidas.
           </div>
           );
 }
