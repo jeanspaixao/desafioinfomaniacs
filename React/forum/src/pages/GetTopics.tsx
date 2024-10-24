@@ -41,7 +41,7 @@ export default function GetTopics(){
               <td>{topic.status_topic}</td>
               <td>{topic.date_insert}</td>
               <td>{topic.date_update}</td>
-              <td><button><Link to={"editTopic/"+topic.id}>Editar</Link> </button> </td>
+              <td><button><Link to={topic.id+"/editTopic"}>Editar</Link> </button> </td>
               <td><button><Link to={topic.id+"/getMessages"}>Respostas</Link> </button></td> 
               <td><button><Link to={"deletTopic/"+topic.id}>Remover</Link> </button> </td>
             </tr>

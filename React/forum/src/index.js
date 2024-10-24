@@ -9,6 +9,9 @@ import NotFound from './pages/NotFound.tsx';
 import GetTopics from './pages/GetTopics.tsx';
 import AddTopic from './pages/AddTopic.tsx';
 import GetMessages from './pages/GetMessages.tsx';
+import EditTopic from './pages/EditTopic.tsx';
+import EditMessage from './pages/EditMessage.tsx';
+import { Content } from '@radix-ui/react-select';
 
 
 const router = createBrowserRouter([
@@ -33,6 +36,20 @@ const router = createBrowserRouter([
     path:'/getTopics/:id/getMessages', 
     element: <GetMessages />
   },
+  {
+    path:'/getTopics/:id/editTopic', 
+    element: <EditTopic topic={{
+      title: '',
+      Content:'',
+      status_topic:''
+    }}/>
+  },{
+    path:'/getTopics/:id/getMessages/editTopic/:idMessage', 
+    element: <EditMessage message={{
+      message: '',
+      status_topic:''
+    }}/>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

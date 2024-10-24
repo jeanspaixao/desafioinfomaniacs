@@ -22,14 +22,6 @@ export default function GetMessages(){
         setMessages(response.data)
     };
 
-    const handleInputChangeTopic = (event) => {
-        const value = event.target.value;
-        setFormDataTopic({
-            ...formDataTopic,
-            [event.target.name]: value,
-        });
-        };
-
     const handleFormSubmitAddMessage = async (event) => {
         event.preventDefault();
         var now = new Date();
@@ -63,16 +55,6 @@ export default function GetMessages(){
         date_update: ''
     });
   
-    const [formDataTopic,setFormDataTopic] = useState({
-        title: '',
-        content: '',
-        user_id: '',
-        status_topic: '',
-        category: '',
-        date_insert: '',
-        date_update: ''
-    });
-
     const handleInputChangeMessage = (event) => {
     const value = event.target.value;
     setFormDataMessage({
@@ -113,7 +95,7 @@ export default function GetMessages(){
               <td>{topic.status_topic}</td>
               <td>{topic.date_insert}</td>
               <td>{topic.date_update}</td>
-              <td><button><Link to={"editTopic/"+topic.id}>Editar</Link> </button>  
+              <td><button><Link to={"/"+topic.id}>Editar</Link> </button>  
               <button><Link to={"deletTopic/"+topic.id}>Remover</Link> </button> </td>
             </tr>
         </tbody>

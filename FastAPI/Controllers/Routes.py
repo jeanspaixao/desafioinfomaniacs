@@ -97,6 +97,8 @@ async def update_topic(id:int, updatedTopic: TopicBase,db: db_dependency):
     db_topic.status_topic = updatedTopic.status_topic
     db_topic.title = updatedTopic.title
     db_topic.user_id = updatedTopic.user_id
+    db_topic.date_update = updatedTopic.date_update
+    
     
     db.flush()
     db.commit()
